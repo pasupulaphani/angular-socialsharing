@@ -1,0 +1,19 @@
+{
+  "name": "angular-socialshare",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pasupulaphani/angular-socialshare",
+  "authors": [
+    "pasupulaphani <pasupulaphani@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
