@@ -23,11 +23,6 @@ describe('angular-socialsharing', function() {
     it('should load config module', function() {
         expect(hasModule('angular-socialsharing.config')).toBeTruthy();
     });
-
-    
-
-    
-
     
     it('should load services module', function() {
         expect(hasModule('angular-socialsharing.services')).toBeTruthy();
