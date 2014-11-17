@@ -1,5 +1,5 @@
 {
-  "name": "angular-socialsharing",
+  "name": "socialsharing",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -28,8 +28,7 @@
     "grunt-ngmin": "~0.0.2",
     "karma": "~0.12.17",
     "karma-jasmine": "~0.1.5",
-    "karma-chrome-launcher": "~0.1.4",
-    "gulp": "^3.8.10"
+    "karma-chrome-launcher": "~0.1.4"
   },
   "engines": {
     "node": ">=0.8.0"
