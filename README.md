@@ -7,7 +7,7 @@ Getting Started
 -----
 Install the library through bower.
 ```js
-bower install angular-socialshare.
+bower install angular-socialsharing
 ```
 
 Add it to your app dependency
