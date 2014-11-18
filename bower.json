@@ -1,19 +1,35 @@
 {
     "name": "angular-socialsharing",
-    "version": "0.0.0",
+    "version": "0.0.4",
     "main": "./dist/angular-socialsharing.js",
-	"homepage": "https://github.com/pasupulaphani/angular-socialshare",
-	"authors": [
-		"pasupulaphani <pasupulaphani@gmail.com>"
-	],
+    "homepage": "https://github.com/pasupulaphani/angular-socialshare",
+    "authors": [
+        "pasupulaphani <pasupulaphani@gmail.com>"
+    ],
     "license": "MIT",
+    "description": "Share via Facebook feed and Twitter intents",
+    "keywords": [
+        "angular",
+        "social",
+        "shares",
+        "tweets"
+    ],
     "ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintignore",
+        ".jshintrc",
+        ".editorconfig",
+        "bower.json",
+        "Gruntfile.js",
+        "package.json",
+        "README.md"
+    ],
     "dependencies": {
         "angular": "~1.0.7"
     },
@@ -22,4 +38,3 @@
         "angular-scenario": "~1.0.7"
     }
 }
-
