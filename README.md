@@ -66,7 +66,7 @@ angular.controller('MyCtrl',
 ```
 
 ##### Result
-![alt tag](https://raw.github.com/pasupulaphani/angular-socialsharing/tree/master/static/fbFeed.png)
+![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/fbFeed.png?raw=true)
 
 ##### Notes
 It is good to ensure FB.init hasn't been already called before you initialize this.
@@ -107,7 +107,7 @@ If **trim_text** is Enabled:
 - Trims text if the share content exceeds 140 charecters.
 - This appends the '...' to show that text has been trimmed.
 - Trim happens after _shortening URI_ if **shorten_url** is enabled.
-- 
+
 ##### Usage
 This is a provider, it can be dependency injected to any angular service, factory, controller, provider ...
 
@@ -137,7 +137,7 @@ angular.controller('MyCtrl',
 ```
 
 ##### Result
-![alt tag](https://raw.github.com/pasupulaphani/angular-socialsharing/tree/master/static/twtIntent.png)
+![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/twtIntent.png?raw=true)
 
 ##### Notes
 - Using this doesn't disturb window variable twttr created by the API. It will be accessible with window.twttr and $window.twttr (in angualr)
