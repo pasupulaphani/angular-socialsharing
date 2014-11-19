@@ -12,7 +12,7 @@ bower install angular-socialsharing
 
 Add it to your app dependency
 ```js
-angular.module('myModule',['socialSharing'])
+angular.module('myModule',['socialsharing'])
 ```
 
 Note: Adding it as a dependency will automatically loads Facebook SDK for JavaScript and Twitter for JavaScript asynchronously if it hasn't been loaded.
@@ -28,7 +28,7 @@ Facebook Feed uses facebook API which requires us to provide a APPID. Register a
 >> Method: **init**
 
 ```js
-angular.module('myModule',['socialSharing']).config(
+angular.module('myModule',['socialsharing']).config(
    function($fbProvider) {
        $fbProvider.init(APPID, {
            locale : myLocale,
@@ -69,8 +69,8 @@ angular.controller('MyCtrl',
 ![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/fbFeed.png?raw=true)
 
 ##### Notes
-It is good to ensure FB.init hasn't been already called before you initialize this.
-Using this doesn't disturb window variable FB created by the API. It will be accessible with window.FB and $window.FB (in angular)
+- It is good to ensure FB.init hasn't been already called before you initialize this.
+- Using this doesn't disturb window variable FB created by the API. It will be accessible with window.FB and $window.FB (in angular)
 
 Share on Twitter
 -----
@@ -85,7 +85,7 @@ Facebook Feed uses facebook API which requires us to provide a APPID. Register a
 >> Method: **setConfig**
 
 ```js
-angular.module('myModule',['socialSharing']).config(
+angular.module('myModule',['socialsharing']).config(
    function($twtProvider) {
        $fbProvider.setConfig({
             shorten_url: true,
