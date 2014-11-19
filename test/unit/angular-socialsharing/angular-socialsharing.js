@@ -3,7 +3,7 @@
 // Set the jasmine fixture path
 // jasmine.getFixtures().fixturesPath = 'base/';
 
-describe('angular-socialsharing', function() {
+describe('socialsharing', function() {
 
     var module;
     var dependencies;
@@ -16,16 +16,16 @@ describe('angular-socialsharing', function() {
     beforeEach(function() {
 
         // Get module
-        module = angular.module('angular-socialsharing');
+        module = angular.module('socialsharing');
         dependencies = module.requires;
     });
 
     it('should load config module', function() {
-        expect(hasModule('angular-socialsharing.config')).toBeTruthy();
+        expect(hasModule('socialsharing.config')).toBeTruthy();
     });
     
     it('should load services module', function() {
-        expect(hasModule('angular-socialsharing.services')).toBeTruthy();
+        expect(hasModule('socialsharing.services')).toBeTruthy();
     });
     
 

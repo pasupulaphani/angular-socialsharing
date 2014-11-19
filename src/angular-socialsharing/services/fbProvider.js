@@ -1,4 +1,4 @@
-angular.module('socialSharing.services')
+angular.module('socialsharing.services')
     .provider(
         "$fb",
         function() {
