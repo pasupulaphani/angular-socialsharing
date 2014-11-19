@@ -5,19 +5,19 @@
 // before all nested files are concatenated by Grunt
 
 // Config
-angular.module('angular-socialsharing.config', [])
-    .value('angular-socialsharing.config', {
+angular.module('socialsharing.config', [])
+    .value('socialsharing.config', {
         debug: true
     });
 
 // Modules
-angular.module('angular-socialsharing.services', []);
-angular.module('angular-socialsharing',
+angular.module('socialsharing.services', []);
+angular.module('socialsharing',
     [
-        'angular-socialsharing.config',
-        'angular-socialsharing.services'
+        'socialsharing.config',
+        'socialsharing.services'
     ]);
-angular.module('socialSharing.services')
+angular.module('socialsharing.services')
     .provider(
         "$fb",
         function() {
@@ -92,7 +92,7 @@ angular.module('socialSharing.services')
                 }
             };
         });
-angular.module('socialSharing.services')
+angular.module('socialsharing.services')
     .provider(
         "$twt",
         function() {
@@ -212,7 +212,7 @@ angular.module('socialSharing.services')
                 }
             };
         });
-angular.module('socialSharing.services')
+angular.module('socialsharing.services')
     .factory(
         "utils",
         function($log, $http) {
