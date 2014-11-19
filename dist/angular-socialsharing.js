@@ -280,3 +280,19 @@ angular.module('socialsharing.services')
             };
         });
 })(window, document);
+
+function loadSdkAsync(id, src) {
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            console.warn("Skipping: Resource with id: " + id + " exists");
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = src;
+        js.async = true;
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', id));
+}

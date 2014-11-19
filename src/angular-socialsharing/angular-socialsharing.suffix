@@ -5,8 +5,8 @@ function loadSdkAsync(id, src) {
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {
+            console.warn("Skipping: Resource with id: " + id + " exists");
             return;
-            console.warn("Skipping: Resource with id: " + id + " exists")
         }
         js = d.createElement(s);
         js.id = id;
