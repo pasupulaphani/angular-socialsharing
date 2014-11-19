@@ -77,9 +77,11 @@ Share on Twitter
 This uses Twitter web Intent to tweet, retweet, ... This lets you get very specific about how you want your share to appear.
 
 ##### No initialization required
-##### Setup configs
+##### Setup configs (optional)
 
-Facebook Feed uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your application.
+This library provides two optional functionalities like shortening URI and trim text (not to exceed the tweet char limit).
+
+These functionalities can be configured by the following configuration items.
 
 > Provider: **$twtProvider**
 >> Method: **setConfig**
@@ -96,8 +98,8 @@ angular.module('myModule',['socialsharing']).config(
 
 | Params     | Value | Description      | Default |  Mandatory  |
 | ---------- | ------| -----------------|---------|--------|
-| shorten_url| bool  | This shortens URI| False   | No |
-| trim_text  | bool  | This trims text  | False   | No |
+| shorten_url| bool  | This shortens URI if required| False   | No |
+| trim_text  | bool  | This trims text if required| False   | No |
 
 If **shorten_url** is Enabled:
 - Shortens URI if the share content exceeds 140 charecters.
@@ -140,4 +142,4 @@ angular.controller('MyCtrl',
 ![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/twtIntent.png?raw=true)
 
 ##### Notes
-- Using this doesn't disturb window variable twttr created by the API. It will be accessible with window.twttr and $window.twttr (in angualr)
+- Using this doesn't disturb window variable twttr created by the API. It will be accessible with window.twttr and $window.twttr (in angular)
