@@ -12,7 +12,10 @@
         "angular",
         "social",
         "shares",
-        "tweets"
+        "tweets",
+        "facebook",
+        "intents",
+        "feed"
     ],
     "ignore": [
         "**/.*",
