@@ -62,7 +62,8 @@ module.exports = function(grunt) {
         },
         karma: {
             unit: {
-                configFile: 'karma-unit.conf.js'
+                configFile: 'karma-unit.conf.js',
+                singleRun: true
             }
         }
     });
