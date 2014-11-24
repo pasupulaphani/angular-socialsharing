@@ -8,7 +8,8 @@ module.exports = function(config) {
 
         plugins: [
             'karma-jasmine',
-            'karma-chrome-launcher'
+            'karma-chrome-launcher',
+            'karma-phantomjs-launcher'
         ],
 
         // list of files / patterns to load in the browser
@@ -59,12 +60,6 @@ module.exports = function(config) {
         // - PhantomJS
         // - IE (only Windows)
         browsers: ['Chrome'],
-        customLaunchers: {
-          Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-          }
-        },
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 60000,
