@@ -18,15 +18,42 @@ angular.module('myModule',['socialsharing'])
 
 Note: Adding it as a dependency will automatically loads Facebook SDK for JavaScript and Twitter for JavaScript asynchronously if it hasn't been loaded.
 
+## Usage
+```js
+angular.module('myModule',['socialsharing'])
+  .config(
+    function($fbProvider) {
+      $fbProvider.init(APPID);
+   })
+  .angular.controller('MyCtrl',
+    function($fb, $twt) {
+      $fb.feed({
+        name: "Link name",
+        description: "Awesome desc",
+        caption: "mylink",
+        link: "http://www.phaninder.com",
+        picture: "http://static.phaninder.com/me.png"
+      });
+      $twt.intent('tweet', {
+        text : 'Adventures at NodeCoptor',
+        url  : 'http://www.phaninder.com/posts/adventures-at-nodecoptor/',
+        hashtags : 'phaninder.com'
+      });
+    });
+```
+
+
 Share on Facebook
 -----
 This uses Facebook Feed Dialog to share/post. Feed Dialog lets you get very specific about how you want your share to appear. 
 
 ##### Set up : Initialization required
+
 Facebook Feed uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your application.
 
 > Provider: **$fbProvider**
 >> Method: **init**
+
 
 ```js
 angular.module('myModule',['socialsharing']).config(
@@ -38,13 +65,16 @@ angular.module('myModule',['socialsharing']).config(
    });
 ```
 
+
 | Params  | Value    | Description        |  Mandatory  |
 | ------- | -------- | -------------------|-------------|
 | APPID   | Number   | Facebook app ID    |  Yes        |
-| locale  | STRING   | Defaults to **en_US** if unspecified |  No |
-| channel | STRING   | Defaults to **app/channel.html** if unspecified | No |
+| locale  | String   | Defaults to **en_US** if unspecified |  No |
+| channel | String   | Defaults to **app/channel.html** if unspecified | No |
+
 
 ##### Usage
+
 This is a provider, it can be dependency injected to any angular service, factory, controller, provider ...
 
 **$fb API** :
@@ -66,18 +96,23 @@ angular.controller('MyCtrl',
     });
 ```
 
+
 ##### Result
 ![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/fbFeed.png?raw=true)
+
 
 ##### Notes
 - It is good to ensure FB.init hasn't been already called before you initialize this.
 - Using this doesn't disturb window variable FB created by the API. It will be accessible with window.FB and $window.FB (in angular)
 
+
 Share on Twitter
 -----
 This uses Twitter web Intent to tweet, retweet, ... This lets you get very specific about how you want your share to appear.
 
+
 ##### No initialization required
+
 ##### Setup configs (optional)
 
 This library provides two optional functionalities like shortening URI and trim text (not to exceed the tweet char limit).
@@ -86,6 +121,7 @@ These functionalities can be configured by the following configuration items.
 
 > Provider: **$twtProvider**
 >> Method: **setConfig**
+
 
 ```js
 angular.module('myModule',['socialsharing']).config(
@@ -96,6 +132,7 @@ angular.module('myModule',['socialsharing']).config(
        });
    });
 ```
+
 
 | Params     | Value | Description      | Default |  Mandatory  |
 | ---------- | ------| -----------------|---------|--------|
@@ -111,16 +148,20 @@ If **trim_text** is Enabled:
 - This appends the '...' to show that text has been trimmed.
 - Trim happens after _shortening URI_ if **shorten_url** is enabled.
 
+
 ##### Usage
+
 This is a provider, it can be dependency injected to any angular service, factory, controller, provider ...
+
 
 **$twt API** :
 > Methods : intent
 >> Parameters :
 
+
 | Params  | Value | Description                          |  Mandatory  |
 | ------- | ------| -------------------------------------|--------|
-| type    | STRING| [tweet\|retweet\|favourite\|user\|follow] | Yes |
+| type    | String| [tweet\|retweet\|favourite\|user\|follow] | Yes |
 | Params  | JSON  | Depends on the type. Refer: [Web Intents][], [Tweet Parameters][] | Yes |
 
 [Web Intents]: https://dev.twitter.com/web/intents
