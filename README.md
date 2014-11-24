@@ -1,6 +1,4 @@
-<!--
-#  [![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing)
--->
+[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![Bower version](https://badge.fury.io/bo/angular-socialsharing.svg)](http://badge.fury.io/bo/angular-socialsharing)
 
 Angular Social Sharing
 =========
