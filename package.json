@@ -36,6 +36,6 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "./node_modules/.bin/karma start karma-unit.conf.js --single-run --browsers PhantomJS,Firefox"
   }
 }
