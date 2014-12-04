@@ -100,9 +100,11 @@ angular.module('socialsharing.services')
             var intent_url = 'https://twitter.com/intent';
             var chars_limit = 140;
 
+            // https://support.twitter.com/articles/78124-posting-links-in-a-tweet
+            var share_url_limit = 22;
+
             // defaults
             var config = {
-                shorten_url: false,
                 trim_text: false
             };
 
@@ -118,6 +120,8 @@ angular.module('socialsharing.services')
             // twitter count 2byte utf-8 char as 1.
             var getCharLeft = function(params) {
 
+                // twitter automatically shortens it.
+                var url_length = params.url.length > share_url_limit ? share_url_limit : params.url.length;
                 var hashtags_num = params.hashtags === '' ? 0 : params.hashtags.split(',').length;
                 var hashtags_spaces;
 
@@ -134,7 +138,7 @@ angular.module('socialsharing.services')
 
                 return (chars_limit -
                     (params.text.length +
-                        params.url.length +
+                        url_length +
                         params.hashtags.length +
                         hashtags_spaces + 2)
                 );
@@ -182,31 +186,17 @@ angular.module('socialsharing.services')
                                 }
                             };
 
-                            var shortenURL = function() {
+                            var deferred = $q.defer();
 
-                                var promise;
-                                if (config.shorten_url && getCharLeft(params) < 0) {
-                                    promise = utils.shortenURL(params.url)
-                                        .then(function(short_url) {
-                                            return short_url;
-                                        });
-                                } else {
-                                    promise = $q.when(params.url);
-                                }
-
-                                return promise;
-                            };
-
-                            shortenURL()
-                                .then(function(url) {
-                                    params.url = url;
-                                })
+                            deferred.promise
                                 .then(function() {
                                     params.text = trimText();
                                 })
                                 .then(function() {
                                     openIntent();
                                 });
+
+                            deferred.resolve();
                         }
                     };
                 }
@@ -279,20 +269,20 @@ angular.module('socialsharing.services')
                 }
             };
         });
-})(window, document);
+    function loadSdkAsync(id, src) {
+        // Load the SDK asynchronously
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                console.warn("Skipping: Resource with id: " + id + " exists");
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = src;
+            js.async = true;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', id));
+    }
 
-function loadSdkAsync(id, src) {
-    // Load the SDK asynchronously
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            console.warn("Skipping: Resource with id: " + id + " exists");
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = src;
-        js.async = true;
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', id));
-}
+})(window, document);
