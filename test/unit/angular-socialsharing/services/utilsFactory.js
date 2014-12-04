@@ -11,6 +11,8 @@ describe("utils", function() {
     }));
 
     describe("encode API to match specs", function() {
+        
+        //encodes a dictionary of values into a URL-encoded format
         it("should contain method encode", function() {
             expect(service.encode).toBeDefined();
         });
