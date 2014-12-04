@@ -1,13 +1,13 @@
 'use strict';
 
-describe("utils", function() {
+describe("ssUtils", function() {
 
     beforeEach(module("socialsharing"));
 
     var service;
 
-    beforeEach(inject(function(utils) {
-        service = utils;
+    beforeEach(inject(function(ssUtils) {
+        service = ssUtils;
     }));
 
     describe("encode API to match specs", function() {

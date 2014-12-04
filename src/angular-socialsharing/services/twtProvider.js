@@ -59,7 +59,7 @@ angular.module('socialsharing.services')
                         if (config.hasOwnProperty(key)) {
                             config[key] = value;
                         } else {
-                            console.warn("Ignoring unknown config: " + key);
+                            if(console) console.warn("Ignoring unknown config: " + key);
                         }
                     });
                 }
@@ -69,14 +69,14 @@ angular.module('socialsharing.services')
 
             return {
                 setConfig: this.setConfig,
-                $get: function($window, $q, utils) {
+                $get: function($window, $q, ssUtils) {
                     return {
                         intent: function(type, params) {
 
                             params = setDefaultProps(params);
 
                             var openIntent = function() {
-                                var twt_intent = [intent_url, '/', type, '?', utils.encode(params)].join('');
+                                var twt_intent = [intent_url, '/', type, '?', ssUtils.encode(params)].join('');
                                 $window.open(twt_intent, '', 'toolbar=0, status=0, width=550, height=420');
                             };
 

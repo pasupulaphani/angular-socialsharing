@@ -38,7 +38,7 @@ angular.module('socialsharing.services')
                         if (config.hasOwnProperty(key)) {
                             config[key] = value;
                         } else {
-                            console.warn("Ignoring unknown config: " + key);
+                            if(console) console.warn("Ignoring unknown config: " + key);
                         }
                     });
                 }

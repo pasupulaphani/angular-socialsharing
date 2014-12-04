@@ -1,6 +1,6 @@
 angular.module('socialsharing.services')
     .factory(
-        "utils",
+        "ssUtils",
         function($log, $http) {
 
             return {
