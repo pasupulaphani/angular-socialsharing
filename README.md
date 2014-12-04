@@ -47,7 +47,7 @@ Share on Facebook
 -----
 This uses Facebook Feed Dialog to share/post. Feed Dialog lets you get very specific about how you want your share to appear. 
 
-##### Set up : Initialization required
+##### Set up : Initialization required (if not already initialized)
 
 Facebook Feed uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your application.
 
@@ -101,7 +101,7 @@ angular.controller('MyCtrl',
 ![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/fbFeed.png?raw=true)
 
 
-##### Notes
+##### Note
 - It is good to ensure FB.init hasn't been already called before you initialize this.
 - Using this doesn't disturb window variable FB created by the API. It will be accessible with window.FB and $window.FB (in angular)
 
@@ -115,7 +115,7 @@ This uses Twitter web Intent to tweet, retweet, ... This lets you get very speci
 
 ##### Setup configs (optional)
 
-This library provides two optional functionalities like shortening URI and trim text (not to exceed the tweet char limit).
+This library provides an optional functionality to trim text (not to exceed the tweet char limit).
 
 These functionalities can be configured by the following configuration items.
 
@@ -127,7 +127,6 @@ These functionalities can be configured by the following configuration items.
 angular.module('myModule',['socialsharing']).config(
    function($twtProvider) {
        $fbProvider.setConfig({
-            shorten_url: true,
             trim_text: true
        });
    });
@@ -136,18 +135,13 @@ angular.module('myModule',['socialsharing']).config(
 
 | Params     | Value | Description      | Default |  Mandatory  |
 | ---------- | ------| -----------------|---------|--------|
-| shorten_url| bool  | This shortens URI if required| False   | No |
 | trim_text  | bool  | This trims text if required| False   | No |
-
-If **shorten_url** is Enabled:
-- Shortens URI if the share content exceeds 140 charecters.
-- This uses google shorten url public api.
 
 If **trim_text** is Enabled:
 - Trims text if the share content exceeds 140 charecters.
 - This appends the '...' to show that text has been trimmed.
-- Trim happens after _shortening URI_ if **shorten_url** is enabled.
 
+*Shortening url* : [t.co](https://support.twitter.com/articles/109623), a twitter service automatically shortens url for you.
 
 ##### Usage
 
@@ -183,5 +177,5 @@ angular.controller('MyCtrl',
 ##### Result
 ![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/twtIntent.png?raw=true)
 
-##### Notes
+##### Note
 - Using this doesn't disturb window variable twttr created by the API. It will be accessible with window.twttr and $window.twttr (in angular)
