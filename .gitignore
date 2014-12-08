@@ -1,5 +1,4 @@
 node_modules
-components
+.tmp
+.sass-cache
 bower_components
-README.html
-npm-debug.log
