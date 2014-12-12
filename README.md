@@ -27,7 +27,7 @@ angular.module('myModule',['socialsharing'])
     function($fbProvider) {
       $fbProvider.init(APPID);
    })
-  .angular.controller('MyCtrl',
+  .controller('MyCtrl',
     function($fb, $twt) {
       $fb.feed({
         name: "Link name",
