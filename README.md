@@ -181,3 +181,11 @@ angular.controller('MyCtrl',
 
 ##### Note
 - Using this doesn't disturb window variable twttr created by the API. It will be accessible with window.twttr and $window.twttr (in angular)
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
