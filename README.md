@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![Bower version](https://badge.fury.io/bo/angular-socialsharing.svg)](http://badge.fury.io/bo/angular-socialsharing)
+[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![Bower version](https://badge.fury.io/bo/angular-socialsharing.svg)](http://badge.fury.io/bo/angular-socialsharing) [![Hex.pm](http://img.shields.io/hexpm/l/plug.svg)]()
 
 Angular Social Sharing
 =========
@@ -27,7 +27,7 @@ angular.module('myModule',['socialsharing'])
     function($fbProvider) {
       $fbProvider.init(APPID);
    })
-  .angular.controller('MyCtrl',
+  .controller('MyCtrl',
     function($fb, $twt) {
       $fb.feed({
         name: "Link name",
