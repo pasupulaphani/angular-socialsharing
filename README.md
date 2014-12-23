@@ -4,7 +4,10 @@ Angular Social Sharing
 =========
 > This is a small library that lets you share info and links on social networks. Currently [Facebook feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.2) and [Twitter intents](https://dev.twitter.com/web/intents) are supported.
 
-Facebook Feed Dialog vs. Share Link Dialog is explained [here](http://www.local-pc-guy.com/web-dev/facebook-feed-dialog-vs-share-link-dialog)
+WHAT GOOD DOES THIS LIBRARY DO:
+* Sharing URL's with (#)fragment identifier
+* Ease things if u are using Facebook Feed Dialog
+  - Facebook Feed Dialog vs. Share Link Dialog is explained [here](http://www.local-pc-guy.com/web-dev/facebook-feed-dialog-vs-share-link-dialog)
 
 Getting Started
 -----
@@ -189,3 +192,7 @@ angular.controller('MyCtrl',
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Locations
+- http://ngmodules.org/modules/angular-socialsharing
+- http://pasupulaphani.github.io/angular-socialsharing/#/
