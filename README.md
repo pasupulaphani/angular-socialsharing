@@ -196,3 +196,4 @@ angular.controller('MyCtrl',
 ## Locations
 - http://ngmodules.org/modules/angular-socialsharing
 - http://pasupulaphani.github.io/angular-socialsharing/#/
+- http://bower.io/search/?q=angular-socialsharing
