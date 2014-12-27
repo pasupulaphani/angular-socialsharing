@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![Bower version](https://badge.fury.io/bo/angular-socialsharing.svg)](http://badge.fury.io/bo/angular-socialsharing) [![Hex.pm](http://img.shields.io/hexpm/l/plug.svg)]()
+[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![Bower version](https://badge.fury.io/bo/angular-socialsharing.svg)](http://badge.fury.io/bo/angular-socialsharing) [![Hex.pm](http://img.shields.io/hexpm/l/plug.svg)]() [![Code Climate](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/gpa.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing) [![Test Coverage](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/coverage.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing)
 
 Angular Social Sharing
 =========
