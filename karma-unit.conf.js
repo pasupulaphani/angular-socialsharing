@@ -21,7 +21,7 @@ module.exports = function(config) {
             'test/unit/**/*.js'
         ],
 
-        preprocessors = {
+        preprocessors: {
             'dist/angular-socialsharing.js': 'coverage'
         };
 
@@ -33,7 +33,7 @@ module.exports = function(config) {
         // possible values: 'dots', 'progress', 'junit'
         reporters: ['progress', 'coverage'],
 
-        coverageReporter = {
+        coverageReporter: {
             type: 'lcov',
             dir: 'coverage/'
         }
