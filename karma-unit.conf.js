@@ -10,7 +10,8 @@ module.exports = function(config) {
             'karma-jasmine',
             'karma-chrome-launcher',
             'karma-phantomjs-launcher',
-            'karma-firefox-launcher'
+            'karma-firefox-launcher',
+            'karma-coverage'
         ],
 
         // list of files / patterns to load in the browser
