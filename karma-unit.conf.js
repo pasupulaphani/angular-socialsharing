@@ -36,7 +36,12 @@ module.exports = function(config) {
 
         coverageReporter: {
             type: 'lcov',
-            dir: 'coverage/'
+            dir: 'coverage/',
+            subdir: function(browser) {
+                // normalization process to keep a consistent browser name accross different
+                // OS
+                return browser.toLowerCase().split(/[ /-]/)[0];
+            }
         },
 
         // web server port
