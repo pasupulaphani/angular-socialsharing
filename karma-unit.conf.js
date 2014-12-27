@@ -21,6 +21,9 @@ module.exports = function(config) {
             'test/unit/**/*.js'
         ],
 
+        preprocessors = {
+            'dist/angular-socialsharing.js': 'coverage'
+        };
 
         // list of files to exclude
         exclude: [],
@@ -28,8 +31,12 @@ module.exports = function(config) {
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'junit'
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
 
+        coverageReporter = {
+            type: 'lcov',
+            dir: 'coverage/'
+        }
 
         // web server port
         port: 9876,
@@ -72,4 +79,3 @@ module.exports = function(config) {
 
     });
 };
-
