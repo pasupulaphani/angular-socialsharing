@@ -23,7 +23,7 @@ module.exports = function(config) {
 
         preprocessors: {
             'dist/angular-socialsharing.js': 'coverage'
-        };
+        },
 
         // list of files to exclude
         exclude: [],
@@ -36,7 +36,7 @@ module.exports = function(config) {
         coverageReporter: {
             type: 'lcov',
             dir: 'coverage/'
-        }
+        },
 
         // web server port
         port: 9876,
