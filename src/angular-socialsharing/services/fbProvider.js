@@ -11,9 +11,9 @@ angular.module('socialsharing.services')
                 channel: 'app/channel.html'
             };
 
-            function fbAsyncInit($window) {
+            function fbAsyncInit() {
                 if (id) {
-                    $window.fbAsyncInit = function() {
+                    window.fbAsyncInit = function() {
                         FB.init({
                             appId: id,
                             channelUrl: config.channel,
@@ -38,16 +38,18 @@ angular.module('socialsharing.services')
                         if (config.hasOwnProperty(key)) {
                             config[key] = value;
                         } else {
-                            if(console) console.warn("Ignoring unknown config: " + key);
+                            if (console) console.warn("Ignoring unknown config: " + key);
                         }
                     });
                 }
+
                 loadSdkAsync('facebook-jssdk', ['//connect.facebook.net', config.locale, 'all.js'].join('/'));
+
+                fbAsyncInit();
             };
 
             function Facebook($window) {
                 this.$window = $window;
-                fbAsyncInit($window);
             }
 
             Facebook.prototype.feed = function(params) {
