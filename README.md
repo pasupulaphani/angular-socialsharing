@@ -197,3 +197,7 @@ angular.controller('MyCtrl',
 - http://ngmodules.org/modules/angular-socialsharing
 - http://pasupulaphani.github.io/angular-socialsharing/#/
 - http://bower.io/search/?q=angular-socialsharing
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pasupulaphani/angular-socialsharing/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
