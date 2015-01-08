@@ -8,4 +8,4 @@ fi
 
 echo "Deploying $deploy_folder folder to GitHub Pages"
 
-git push origin `git subtree split --prefix $deploy_folder master`:gh-pages --force
+git push origin `git subtree split --prefix $deploy_folder gh-pages-gen`:gh-pages --force
