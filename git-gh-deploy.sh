@@ -1,11 +1,11 @@
 #!/bin/sh
 if [ -z "$1" ]
 then
-  deploy_folder=$1
-else
   deploy_folder="dist"
+else
+  deploy_folder=$1
 fi
 
-echo "Deploying $1 folder to GitHub Pages"
+echo "Deploying $deploy_folder folder to GitHub Pages"
 
-git subtree push --prefix $1 origin gh-pages
+git push origin `git subtree split --prefix $deploy_folder master`:gh-pages --force
