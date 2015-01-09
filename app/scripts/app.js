@@ -14,6 +14,13 @@ angular
         'ngSanitize',
         'ngTouch'
     ])
+    .constant('appConfig', {
+        projectUrl: 'https://github.com/pasupulaphani/angular-socialsharing',
+        demoUrl: 'http://embed.plnkr.co/xSwjk6fXgKRqIGb56KBp/preview',
+        getStartMdUrl: 'https://rawgit.com/pasupulaphani/angular-socialsharing/master/README.md',
+        tarUrl: 'https://github.com/pasupulaphani/angular-socialsharing/tarball/master',
+        fallbackUrl: 'https://github.com/pasupulaphani/angular-socialsharing/blob/master/README.md'
+    })
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
