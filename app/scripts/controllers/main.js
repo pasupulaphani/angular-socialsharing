@@ -11,7 +11,7 @@ angular.module('angApp')
     .controller('MainCtrl', function($scope, $window, $sce, $http, appConfig) {
 
         $scope.conf = appConfig;
-        $scope.conf.demoUrl = $sce.trustAsResourceUrl(appConfig.demoUrl);
+        $scope.conf.demoUrl = $sce.trustAsResourceUrl(appConfig.demoUrl.toString());
 
         $scope.info = {
             getStartTemp: ''
