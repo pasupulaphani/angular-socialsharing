@@ -55,12 +55,6 @@ describe("$fb", function() {
             });
             expect($window.FB.ui).toHaveBeenCalled();
         });
-
-        it("do nothing if no params are passed", function() {
-
-            service.feed();
-            expect($window.FB.ui.calls.any()).toEqual(false);
-        });
     });
 
     describe("parse XFBML when asked:", function() {
