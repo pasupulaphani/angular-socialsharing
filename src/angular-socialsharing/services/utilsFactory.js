@@ -40,28 +40,6 @@ angular.module('socialsharing.services')
                     }
 
                     return encodedStr;
-                },
-                shortenURL: function(url) {
-
-                    var googl_shorten_api = 'https://www.googleapis.com/urlshortener/v1/url';
-                    var data = {
-                        longUrl: url
-                    };
-
-                    var promise = $http.post(googl_shorten_api, data)
-                        .then(function(response) {
-
-                                $log.info("Shortening url success");
-                                $log.info(response.data.longUrl + ' --> ' + response.data.id);
-                                return response.data.id;
-                            },
-                            function(error) {
-
-                                $log.warn("Failed to shorten url");
-                                return url;
-                            });
-
-                    return promise;
                 }
             };
         });

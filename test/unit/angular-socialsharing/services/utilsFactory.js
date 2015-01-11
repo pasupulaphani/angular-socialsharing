@@ -114,10 +114,4 @@ describe("ssUtils", function() {
             });
         });
     });
-
-    describe("encode API to match specs", function() {
-        it("should contain method shortenURL", function() {
-            expect(service.shortenURL).toBeDefined();
-        });
-    });
 });

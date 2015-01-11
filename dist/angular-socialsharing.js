@@ -19,7 +19,7 @@ angular.module('socialsharing',
     ]);
 angular.module('socialsharing.services')
     .provider(
-        "$fb",
+        '$fb',
         function() {
 
             var id;
@@ -30,7 +30,7 @@ angular.module('socialsharing.services')
                 channel: 'app/channel.html'
             };
 
-            function fbAsyncInit() {
+            function fbAsyncInit(callback) {
                 if (id) {
                     window.fbAsyncInit = function() {
                         FB.init({
@@ -42,7 +42,7 @@ angular.module('socialsharing.services')
                     };
 
                 } else {
-                    throw ("FB App Id Cannot be blank");
+                    throw ('FB App Id Cannot be blank');
                 }
             }
 
@@ -57,7 +57,7 @@ angular.module('socialsharing.services')
                         if (config.hasOwnProperty(key)) {
                             config[key] = value;
                         } else {
-                            if (console) console.warn("Ignoring unknown config: " + key);
+                            if (console) console.warn('Ignoring unknown config: ' + key);
                         }
                     });
                 }
@@ -83,8 +83,17 @@ angular.module('socialsharing.services')
                 if (this.$window.FB) {
                     FB.ui(params, function(response) {});
                 } else {
-                    throw "FB is not available/initialized";
+                    throw new Error('FB is not available/initialized');
                 }
+            };
+
+
+            // this will parse the document (or given element)
+            // this will generate fb elements(like, share buttons)
+            Facebook.prototype.parse = function(ele) {
+
+                ele = ele || document;
+                FB.XFBML.parse(ele);
             };
 
             return {
@@ -96,7 +105,7 @@ angular.module('socialsharing.services')
         });
 angular.module('socialsharing.services')
     .provider(
-        "$twt",
+        '$twt',
         function() {
 
             var intent_url = 'https://twitter.com/intent';
@@ -155,15 +164,21 @@ angular.module('socialsharing.services')
                         if (config.hasOwnProperty(key)) {
                             config[key] = value;
                         } else {
-                            if(console) console.warn("Ignoring unknown config: " + key);
+                            if (console) console.warn('Ignoring unknown config: ' + key);
                         }
                     });
                 }
             };
 
-            loadSdkAsync('twitter-wjs', 'https://platform.twitter.com/widgets.js');
+            this.init = function() {
+
+                loadSdkAsync('twitter-wjs', 'https://platform.twitter.com/widgets.js');
+
+                return this;
+            };
 
             return {
+                init: this.init,
                 setConfig: this.setConfig,
                 $get: function($window, $q, ssUtils) {
                     return {
@@ -246,28 +261,6 @@ angular.module('socialsharing.services')
                     }
 
                     return encodedStr;
-                },
-                shortenURL: function(url) {
-
-                    var googl_shorten_api = 'https://www.googleapis.com/urlshortener/v1/url';
-                    var data = {
-                        longUrl: url
-                    };
-
-                    var promise = $http.post(googl_shorten_api, data)
-                        .then(function(response) {
-
-                                $log.info("Shortening url success");
-                                $log.info(response.data.longUrl + ' --> ' + response.data.id);
-                                return response.data.id;
-                            },
-                            function(error) {
-
-                                $log.warn("Failed to shorten url");
-                                return url;
-                            });
-
-                    return promise;
                 }
             };
         });

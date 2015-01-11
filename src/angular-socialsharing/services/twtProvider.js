@@ -1,6 +1,6 @@
 angular.module('socialsharing.services')
     .provider(
-        "$twt",
+        '$twt',
         function() {
 
             var intent_url = 'https://twitter.com/intent';
@@ -59,15 +59,21 @@ angular.module('socialsharing.services')
                         if (config.hasOwnProperty(key)) {
                             config[key] = value;
                         } else {
-                            if(console) console.warn("Ignoring unknown config: " + key);
+                            if (console) console.warn('Ignoring unknown config: ' + key);
                         }
                     });
                 }
             };
 
-            loadSdkAsync('twitter-wjs', 'https://platform.twitter.com/widgets.js');
+            this.init = function() {
+
+                loadSdkAsync('twitter-wjs', 'https://platform.twitter.com/widgets.js');
+
+                return this;
+            };
 
             return {
+                init: this.init,
                 setConfig: this.setConfig,
                 $get: function($window, $q, ssUtils) {
                     return {
