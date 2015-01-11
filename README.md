@@ -21,14 +21,14 @@ Add it to your app dependency
 angular.module('myModule',['socialsharing'])
 ```
 
-Note: Adding it as a dependency will automatically loads Facebook SDK for JavaScript and Twitter for JavaScript asynchronously if it hasn't been loaded.
-
 ## Usage
 ```js
 angular.module('myModule',['socialsharing'])
   .config(
-    function($fbProvider) {
+    function($fbProvider, $twtProvider) {
       $fbProvider.init(APPID);
+      $twtProvider.init()
+        .trimText(true);
    })
   .controller('MyCtrl',
     function($fb, $twt) {
@@ -54,6 +54,8 @@ This uses Facebook Feed Dialog to share/post. Feed Dialog lets you get very spec
 
 ##### Set up : Initialization required (if not already initialized)
 
+Initializing will automatically loads Facebook SDK for JavaScript asynchronously if it hasn't been loaded.
+
 Facebook Feed uses facebook API which requires us to provide a APPID. Register a facebook app and Configure the APPID in your application.
 
 > Provider: **$fbProvider**
@@ -78,12 +80,17 @@ angular.module('myModule',['socialsharing']).config(
 | channel | String   | Defaults to **app/channel.html** if unspecified | No |
 
 
-##### Usage
+### Usage
 
 This is a provider, it can be dependency injected to any angular service, factory, controller, provider ...
 
 **$fb API** :
-> Methods : feed
+
+*Methods*: feed, parse
+
+### $fb.feed
+
+> Method : feed
 >> Parameters : https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.2#jssdk
 
 ```js
@@ -105,6 +112,20 @@ angular.controller('MyCtrl',
 ##### Result
 ![alt tag](https://github.com/pasupulaphani/angular-socialsharing/blob/master/static/fbFeed.png?raw=true)
 
+### $fb.parse
+
+> Method : parse
+This utility renders XFBML markup in a document. Useful when FB sdk fails to render share, like buttons on angular templates.
+
+```js
+angular.controller('MyCtrl',
+    function($fb) {
+.....
+        $fb.parse(angular.element('#someId'));
+.....
+    });
+```
+
 
 ##### Note
 - It is good to ensure FB.init hasn't been already called before you initialize this.
@@ -116,39 +137,37 @@ Share on Twitter
 This uses Twitter web Intent to tweet, retweet, ... This lets you get very specific about how you want your share to appear.
 
 
-##### No initialization required
+##### Initialization required
 
-##### Setup configs (optional)
+Initializing will automatically loads Twitter sdk for JavaScript asynchronously if it hasn't been loaded.
 
-This library provides an optional functionality to trim text (not to exceed the tweet char limit).
+##### Enable utilities (optional)
 
-These functionalities can be configured by the following configuration items.
+This library provides an optional functionality(utility) to trim text (if exceeds the tweet char limit 140).
+
+These functionalities can be configured.
 
 > Provider: **$twtProvider**
->> Method: **setConfig**
+>> Method: **trimText**
 
 
 ```js
 angular.module('myModule',['socialsharing']).config(
    function($twtProvider) {
-       $fbProvider.setConfig({
-            trim_text: true
-       });
+       $twtProvider.init()
+        .trimText(true);
    });
 ```
 
 
-| Params     | Value | Description      | Default |  Mandatory  |
-| ---------- | ------| -----------------|---------|--------|
-| trim_text  | bool  | This trims text if required| False   | No |
-
-If **trim_text** is Enabled:
+**trimText**:
+- Disabled by default.
 - Trims text if the share content exceeds 140 charecters.
 - This appends the '...' to show that text has been trimmed.
 
 *Shortening url* : [t.co](https://support.twitter.com/articles/109623), a twitter service automatically shortens url for you.
 
-##### Usage
+#### Usage
 
 This is a provider, it can be dependency injected to any angular service, factory, controller, provider ...
 
@@ -158,10 +177,10 @@ This is a provider, it can be dependency injected to any angular service, factor
 >> Parameters :
 
 
-| Params  | Value | Description                          |  Mandatory  |
-| ------- | ------| -------------------------------------|--------|
-| type    | String| [tweet\|retweet\|favourite\|user\|follow] | Yes |
-| Params  | JSON  | Depends on the type. Refer: [Web Intents][], [Tweet Parameters][] | Yes |
+| Params  | Value | Description                          |  Mandatory  | Default |
+| ------- | ------| -------------------------------------|--------|--------|
+| type    | String| [tweet\|retweet\|favourite\|user\|follow] | No | tweet |
+| Params  | JSON  | Depends on the type. Refer: [Web Intents][], [Tweet Parameters][] | Yes | |
 
 [Web Intents]: https://dev.twitter.com/web/intents
 [Tweet Parameters]: https://dev.twitter.com/web/tweet-button/parameters
