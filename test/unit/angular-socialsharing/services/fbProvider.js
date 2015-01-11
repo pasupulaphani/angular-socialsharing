@@ -2,8 +2,7 @@
 
 describe("$fb", function() {
 
-    var provider, service;
-    var $window, $timeout;
+    var provider, service, $window;
 
     beforeEach(module("socialsharing", function($provide, $fbProvider) {
         provider = $fbProvider;

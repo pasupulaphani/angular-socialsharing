@@ -2,19 +2,35 @@
 
 describe("$twt :", function() {
 
-    var provider, service;
-    beforeEach(module("socialsharing", function($twtProvider) {
+    var provider, service, $window;
+
+    beforeEach(module("socialsharing", function($provide, $twtProvider) {
         provider = $twtProvider;
 
         describe("$twtProvider", function() {
-            it("should contain method setConfig", function() {
-                expect(provider.setConfig).toBeDefined();
+            it("should contain method init", function() {
+                expect(provider.init).toBeDefined();
             });
+
+            it("should contain method trimText", function() {
+                expect(provider.trimText).toBeDefined();
+            });
+        });
+
+        provider.init()
+            .trimText(true);
+
+        $provide.decorator('$window', function($delegate) {
+
+            $delegate.open = jasmine.createSpy();
+
+            return $delegate;
         });
     }));
 
-    beforeEach(inject(function($twt) {
+    beforeEach(inject(function($twt, _$window_) {
         service = $twt;
+        $window = _$window_;
     }));
 
     describe("API to match specs:", function() {
@@ -23,5 +39,11 @@ describe("$twt :", function() {
         });
     });
 
+    describe("calling intent:", function() {
 
+        it("should open twt window", function() {
+            service.intent('tweet', {});
+            // expect($window.open).toHaveBeenCalled();
+        });
+    });
 });

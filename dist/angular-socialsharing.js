@@ -120,6 +120,8 @@ angular.module('socialsharing.services')
             };
 
             var setDefaultProps = function(params) {
+
+                params = params || {};
                 angular.forEach(['text', 'url', 'hashtags'], function(prop) {
                     if (!params.hasOwnProperty(prop)) {
                         params[prop] = '';
@@ -155,19 +157,12 @@ angular.module('socialsharing.services')
                 );
             };
 
-            this.setConfig = function(twt_config) {
+            this.trimText = function(trim) {
 
-                if (twt_config) {
-
-                    angular.forEach(twt_config, function(value, key) {
-
-                        if (config.hasOwnProperty(key)) {
-                            config[key] = value;
-                        } else {
-                            if (console) console.warn('Ignoring unknown config: ' + key);
-                        }
-                    });
+                if (trim === true) {
+                    config.trim_text = true;
                 }
+                return this;
             };
 
             this.init = function() {
@@ -179,11 +174,12 @@ angular.module('socialsharing.services')
 
             return {
                 init: this.init,
-                setConfig: this.setConfig,
+                trimText: this.trimText,
                 $get: function($window, $q, ssUtils) {
                     return {
                         intent: function(type, params) {
 
+                            type = type || 'tweet';
                             params = setDefaultProps(params);
 
                             var openIntent = function() {
@@ -197,17 +193,16 @@ angular.module('socialsharing.services')
 
                                 if (config.trim_text && chars_left < 0) {
                                     var new_len = params.text.length + chars_left - 3;
-                                    return params.text.substring(0, new_len).trim() + '...';
-                                } else {
-                                    return params.text;
+                                    params.text = params.text.substring(0, new_len).trim() + '...';
                                 }
+                                return;
                             };
 
                             var deferred = $q.defer();
 
                             deferred.promise
                                 .then(function() {
-                                    params.text = trimText();
+                                    trimText();
                                 })
                                 .then(function() {
                                     openIntent();
