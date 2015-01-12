@@ -9,6 +9,10 @@ WHAT GOOD DOES THIS LIBRARY DO:
 * Ease things if u are using Facebook Feed Dialog
   - Facebook Feed Dialog vs. Share Link Dialog is explained [here](http://www.local-pc-guy.com/web-dev/facebook-feed-dialog-vs-share-link-dialog)
 
+Demo
+------
+[Check it out](http://pasupulaphani.github.io/angular-socialsharing/#/demo)
+
 Getting Started
 -----
 Install the library through bower.
