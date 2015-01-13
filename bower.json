@@ -6,7 +6,7 @@
     "authors": [
         "pasupulaphani <pasupulaphani@gmail.com>"
     ],
-    "license": "MIT",
+    "license": "Apache",
     "description": "Share via Facebook feed and Twitter intents",
     "keywords": [
         "angular",
