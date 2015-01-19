@@ -5,7 +5,7 @@ Angular Social Sharing
 > This is a small library that lets you share info and links on social networks. Currently [Facebook feed](https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.2) and [Twitter intents](https://dev.twitter.com/web/intents) are supported.
 
 WHAT GOOD DOES THIS LIBRARY DO:
-* Sharing URL's with (#)fragment identifier
+* Sharing URLs with (#)fragment identifier
 * Ease things if u are using Facebook Feed Dialog
   - Facebook Feed Dialog vs. Share Link Dialog is explained [here](http://www.local-pc-guy.com/web-dev/facebook-feed-dialog-vs-share-link-dialog)
 
