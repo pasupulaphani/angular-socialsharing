@@ -1,20 +1,20 @@
-#!/bin/sh
+# #!/bin/sh
 
-grunt
+# grunt
 
-printf "\n ################### Grunt done ######################### \n"
+# printf "\n ################### Grunt done ######################### \n"
 
-git add .
-git add -u
+# git add .
+# git add -u
 
 
-printf "\n ################### git status ######################### \n"
-git status
+# printf "\n ################### git status ######################### \n"
+# git status
 
-git commit -m "deploy to gh-pages `date`"
-git push origin gh-pages-gen
+# git commit -m "deploy to gh-pages `date`"
+# git push origin gh-pages-gen
 
-printf "\n ################### git committed and pushed ######################### \n"
+# printf "\n ################### git committed and pushed ######################### \n"
 
 if [ -z "$1" ]
 then
