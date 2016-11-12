@@ -1,4 +1,8 @@
-[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![Bower version](https://badge.fury.io/bo/angular-socialsharing.svg)](http://badge.fury.io/bo/angular-socialsharing) [![Hex.pm](http://img.shields.io/hexpm/l/plug.svg)]() [![Code Climate](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/gpa.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing) [![Test Coverage](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/coverage.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing)
+[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing)
+[![npm version](http://img.shields.io/npm/v/angular-socialsharing.svg)](https://npmjs.org/package/angular-socialsharing)
+[![bower version](http://img.shields.io/bower/v/angular-socialsharing.svg)](https://npmjs.org/package/angular-socialsharing) [![Hex.pm](http://img.shields.io/hexpm/l/plug.svg)]()
+[![Code Climate](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/gpa.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing)
+[![Test Coverage](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/coverage.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing)
 
 Angular Social Sharing
 =========
@@ -15,7 +19,7 @@ Demo
 
 Getting Started
 -----
-Install the library through bower.
+Install the library through bower or npm.
 ```js
 bower install angular-socialsharing
 ```
@@ -54,7 +58,7 @@ angular.module('myModule',['socialsharing'])
 
 Share on Facebook
 -----
-This uses Facebook Feed Dialog to share/post. Feed Dialog lets you get very specific about how you want your share to appear. 
+This uses Facebook Feed Dialog to share/post. Feed Dialog lets you get very specific about how you want your share to appear.
 
 ##### Set up : Initialization required (if not already initialized)
 
@@ -223,4 +227,3 @@ angular.controller('MyCtrl',
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/pasupulaphani/angular-socialsharing/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

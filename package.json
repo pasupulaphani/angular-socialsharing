@@ -1,6 +1,6 @@
 {
   "name": "angular-socialsharing",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "dependencies": {},
   "devDependencies": {
     "connect-livereload": "~0.4.0",
@@ -38,6 +38,30 @@
   },
   "scripts": {
     "preinstall": "npm i -g grunt-cli bower karma-cli codeclimate-test-reporter underscore-cli",
-    "test": "./node_modules/.bin/karma start karma-unit.conf.js --single-run --browsers PhantomJS,Firefox"
-  }
+    "test": "karma start karma-unit.conf.js --single-run --browsers PhantomJS,Firefox"
+  },
+  "description": "[![Build Status](https://secure.travis-ci.org/pasupulaphani/angular-socialsharing.png?branch=master)](http://travis-ci.org/pasupulaphani/angular-socialsharing) [![npm version](http://img.shields.io/npm/v/angular-socialsharing.svg)](https://npmjs.org/package/angular-socialsharing) [![bower version](http://img.shields.io/bower/v/angular-socialsharing.svg)](https://npmjs.org/package/angular-socialsharing) [![Hex.pm](http://img.shields.io/hexpm/l/plug.svg)]() [![Code Climate](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/gpa.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing) [![Test Coverage](https://codeclimate.com/github/pasupulaphani/angular-socialsharing/badges/coverage.svg)](https://codeclimate.com/github/pasupulaphani/angular-socialsharing)",
+  "main": "./dist/angular-socialsharing.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasupulaphani/angular-socialsharing.git"
+  },
+  "keywords": [
+    "angular",
+    "social",
+    "shares",
+    "tweets",
+    "facebook",
+    "intents",
+    "feed"
+  ],
+  "author": "pasupulaphani@gmail.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pasupulaphani/angular-socialsharing/issues"
+  },
+  "homepage": "https://github.com/pasupulaphani/angular-socialsharing#readme"
 }
